@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">Not Render</div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
-        const name = document.createElement('h1');
-        name.innerHTML = "Shahid";
-        const root = document.getElementById('root');
-        root.appendChild(name);
+        const name = React.createElement('h1',null,"Shahid");
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(name);
     </script>
 </body>
 </html>
