@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ShahidAktarMir/React#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
