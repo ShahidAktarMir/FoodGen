@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./ShimmerUI";
 
 const Body =()=>{
     const [allRes, setAllres] = useState([]);
@@ -13,7 +14,7 @@ const Body =()=>{
         const json = await data.json();
         setAllres(json?.data?.cards[1]?.data?.data?.cards);
     }
-    return(
+    return (allRes.length==0)?<Shimmer/>:(
         <div className="cardsBody">{
             allRes.map((res)=>{
                 return(

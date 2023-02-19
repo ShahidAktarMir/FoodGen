@@ -30,3 +30,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.cardsShimmer{
+    height: 380px;
+    width: 260px;
+    background: linear-gradient(-45deg, #d4c8c5, #d1cbcd, #e0e4e6, #e5e6e5);
+	background-size: 100% 100%;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 20%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 20%;
+	}
+}
