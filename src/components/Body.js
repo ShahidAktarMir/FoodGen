@@ -14,7 +14,7 @@ const Body =()=>{
         setAllres(json?.data?.cards[1]?.data?.data?.cards);
     }
     return(
-        <div>{
+        <div className="cardsBody">{
             allRes.map((res)=>{
                 return(
                     <RestaurantCard {...res?.data} key = {res?.data?.id}/>
