@@ -17,7 +17,7 @@ const Body =()=>{
         <div className="cardsBody">{
             allRes.map((res)=>{
                 return(
-                    <RestaurantCard {...res?.data} key = {res?.data?.id}/>
+                    <RestaurantCard {...res?.data}  key={res?.data?.id}/>
                 )
             })
         }</div>
