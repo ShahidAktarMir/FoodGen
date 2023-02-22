@@ -1,7 +1,10 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
 }
 .navItems>ul{
     display: flex;
@@ -10,14 +13,26 @@
     list-style: none;
     padding: 0.5rem;
     margin: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.navItems>ul>li:hover{
+    color: #EC5C5D;
+}
+.navItems>ul:hover{
+    cursor: pointer;
 }
 .cards{
     height: 380px;
     width: 260px;
-    border: 1px solid black;
     margin: 10px;
     padding: 10px;
-    letter-spacing: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.2s ease-in-out;
+    
+}
+.cards:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
 }
 .cards>img{
     height:170px;
@@ -25,7 +40,6 @@
 }
 .cardsBody{
     margin-top: 1rem;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -33,18 +47,33 @@
 .cardsShimmer{
     height: 380px;
     width: 260px;
-    background: linear-gradient(-45deg, #d4c8c5, #d1cbcd, #e0e4e6, #e5e6e5);
-	background-size: 100% 100%;
-	animation: gradient 5s ease infinite;
+    margin: 10px;
+    padding: 10px;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+    background-size: 1200px 100%;
 }
-@keyframes gradient {
-	0% {
-		background-position: 0% 20%;
-	}
-	50% {
-		background-position: 100% 100%;
-	}
-	100% {
-		background-position: 0% 20%;
-	}
+
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1200px 0;
+    }
+    100% {
+        background-position: 1200px 0;
+    }
 }
