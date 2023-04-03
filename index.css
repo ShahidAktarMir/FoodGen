@@ -1,32 +1,73 @@
-body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@font-face {
+    font-family: Teko;
+    src: url(./src/assets/fonts/Teko-Regular.ttf);
 }
+@font-face {
+    font-family: Exo2;
+    src: url(./src/assets/fonts/Exo2-Regular.ttf);
 
+}
 .header{
     display: flex;
     justify-content: space-between;
+    font-family: Teko;
+    font-size: 1.5rem;
+    color:#F0F0F0;
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
 }
-.navItems>ul{
+.navMenu1>ul{
     display: flex;
-}
-.navItems>ul>li{
     list-style: none;
-    padding: 0.5rem;
-    margin: 0.5rem;
+}
+.navMenu2>ul{
+    display: flex;
+    list-style: none;
+}
+.logo{
+    height: 85px;
+    width: 107px;
+}
+.navMenu1>ul>li{
+    margin: 0px 100px 0px 10px;
     transition: all 0.2s ease-in-out;
 }
-.navItems>ul>li:hover{
-    color: #EC5C5D;
+.navMenu2>ul>li{
+    margin: 0px 100px 0px 10px;
+    transition: all 0.2s ease-in-out;
 }
-.navItems>ul:hover{
+.navMenu2>ul>li:hover{
+    color: #00815e;
+}
+.navMenu2>ul:hover{
     cursor: pointer;
+}
+.navMenu1>ul>li:hover{
+    color: #00815e;
+}
+.navMenu1>ul:hover{
+    cursor: pointer;
+}
+.logo>img{
+    height: 100%;
+    width: 100%;
 }
 .cards{
     height: 380px;
     width: 260px;
     margin: 10px;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-family: Exo2;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     transition: all 0.2s ease-in-out;
     
 }

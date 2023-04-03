@@ -7,7 +7,7 @@ const RestaurantCard = ({name,cloudinaryImageId,costForTwoString,cuisines,locali
         <div>
         <h3>{name}</h3>
         <h4>{locality}</h4>
-        <p>{cuisines.join(', ')}</p>
+        {/* <p>{cuisines.join(', ')}</p> */}
         <p>{costForTwoString}</p>
         </div>
         
