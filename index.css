@@ -163,3 +163,38 @@ a{
         background-position: 1200px 0;
     }
 }
+.fullDetails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.Details{
+    margin-right: 500px;
+}
+.buy{
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 30px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    background: rgba(199, 16, 101, 0.65);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+transition: all 0.3s ease-in-out;
+}
+.buy:hover {
+    cursor: pointer;
+    border-radius: 28px;
+    background: #7f17b3;
+    background-image: -webkit-linear-gradient(top, #7f17b3, #8719b3);
+    background-image: -moz-linear-gradient(top, #7f17b3, #8719b3);
+    background-image: -ms-linear-gradient(top, #7f17b3, #8719b3);
+    background-image: -o-linear-gradient(top, #7f17b3, #8719b3);
+    background-image: linear-gradient(to bottom, #7f17b3, #8719b3);
+    text-decoration: none;
+  }

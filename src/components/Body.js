@@ -17,11 +17,10 @@ const Body =()=>{
     },[])
 
     async function getRes(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.4935958&lng=88.1949782&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.56379562768114&lng=88.37036063977736&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json();
-        setAllres(json?.data?.cards[1]?.data?.data?.cards);
-        setFilterres(json?.data?.cards[1]?.data?.data?.cards)
-        console.log(json);
+        setAllres(json?.data?.cards[2]?.data?.data?.cards);
+        setFilterres(json?.data?.cards[2]?.data?.data?.cards)
     }
     if(!allRes) return null;
     if(filterRes.length==0) return <h1>No Restaurant Found - ""{searchText}""</h1>;
@@ -34,7 +33,7 @@ const Body =()=>{
         <div className="cardsBody">{
             filterRes.map((res)=>{
                 return(
-                    <Link to={"/restaurant/"+res?.data?.id}><RestaurantCard {...res?.data}  key={res?.data?.id}/></Link>
+                    <Link to={"/restaurant/"+res?.data?.id} key={res?.data?.id}><RestaurantCard {...res?.data}  /></Link>
                 )
             })
         }</div>
