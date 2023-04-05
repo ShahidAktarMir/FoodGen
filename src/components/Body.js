@@ -22,6 +22,7 @@ const Body =()=>{
         setFilterres(json?.data?.cards[0]?.data?.data?.cards)
     }
     if(!allRes) return null;
+    if(!filterRes) return <h1>No Restaurant Found - {searchText}</h1>
     return (allRes.length==0)?<Shimmer/>:(
         <>
         <div className="searchbar">
