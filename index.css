@@ -19,10 +19,23 @@
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.18);
+    margin-bottom: 50px;
 }
 .navMenu1>ul{
     display: flex;
     list-style: none;
+}
+.navMenu1>ul>li>a{
+    text-decoration: none;
+    color: #F0F0F0;
+}
+.navMenu2>ul>li>a{
+    text-decoration: none;
+    color: #F0F0F0;
+}
+a{
+    text-decoration: none;
+    color: black
 }
 .navMenu2>ul{
     display: flex;
@@ -40,13 +53,13 @@
     margin: 0px 100px 0px 10px;
     transition: all 0.2s ease-in-out;
 }
-.navMenu2>ul>li:hover{
+.navMenu2>ul>li>a:hover{
     color: #00815e;
 }
 .navMenu2>ul:hover{
     cursor: pointer;
 }
-.navMenu1>ul>li:hover{
+.navMenu1>ul>li>a:hover{
     color: #00815e;
 }
 .navMenu1>ul:hover{
@@ -89,7 +102,7 @@
     border-radius: 5px;
 }
 .cards{
-    height: auto;
+    height: 350px;
     width: 260px;
     margin: 10px;
     padding: 10px;
