@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./ShimmerUI";
 import filter from "../utils/helperFunction";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRes, setAllres] = useState();
   const [filterRes, setFilterres] = useState();
   const [searchText, setSearchtext] = useState();
+  const isOnline = useOnline();
+
   useEffect(() => {
     getRes();
   }, []);
