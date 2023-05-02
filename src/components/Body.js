@@ -32,22 +32,24 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="searchbar">
+      <div className="bg-yellow-100">
         <input
           type="text"
           placeholder="Search Here"
           onChange={(e) => setSearchtext(e.target.value)}
+          className="w-96 m-5 p-2 rounded outline-pink-100"
         />
         <button
           onClick={() => {
             const data = filter(searchText, allRes);
             setFilterres(data);
           }}
+          className="bg-green-600 hover:bg-green-700 rounded h-10 w-20 text-slate-200"
         >
           Search
         </button>
       </div>
-      <div className="cardsBody">
+      <div className="flex flex-wrap ml-28">
         {filterRes.map((res) => {
           return (
             <Link to={"/restaurant/" + res?.data?.id} key={res?.data?.id}>
