@@ -3,18 +3,24 @@ import { IMGID } from "./constant";
 const RestaurantCard = ({
   name,
   cloudinaryImageId,
-  costForTwoString,
+  costForTwo,
   cuisines,
   locality,
+  avgRating,
 }) => {
   return (
-    <div className="my-5 mx-5 p-3 h-80 w-60 bg-zinc-50 rounded hover:shadow ">
-      <img src={IMGID + cloudinaryImageId} className="rounded mb-5" />
+    <div className="my-5 mx-5 p-3 h-auto w-60 bg-gray-100 rounded-xl hover:shadow ">
+      <img src={IMGID + cloudinaryImageId} className="rounded-t-lg mb-5" />
       <div>
         <h3 className="font-medium">{name}</h3>
         <h4>{locality}</h4>
-        <p>{cuisines.join(", ")}</p>
-        <p className="font-bold">{costForTwoString}</p>
+        <p>
+          {cuisines[0]}, {cuisines[1]}
+        </p>
+        <p>{avgRating}⭐ ⭐ ⭐</p>
+        <p className=" text-green-500 mt-2 bg-gray-200 rounded-full p-2 text-center font-semibold">
+          ₹{costForTwo / 200}
+        </p>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 const useRestaurant = (resID) => {
   const [resInfo, setResInfo] = useState({});
-
   useEffect(() => {
     getDetails();
   }, []);
@@ -11,9 +10,11 @@ const useRestaurant = (resID) => {
         resID +
         "&submitAction=ENTER"
     );
+
     const json = await data.json();
-    setResInfo(json?.data?.cards[0]?.card?.card?.info);
+    setResInfo(json);
   }
+
   return resInfo;
 };
 export default useRestaurant;
