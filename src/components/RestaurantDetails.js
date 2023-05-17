@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMGID } from "./constant";
 import SearchBar from "./SearchBar";
+import Shimmer2 from "./ShimmerUI2";
 
 const ResDet = () => {
   const { resID } = useParams();
@@ -48,7 +49,7 @@ const ResDet = () => {
     setFilterMenu(filtered);
   };
   return !mainRes ? (
-    <h1>Wait for While</h1>
+    <Shimmer2 />
   ) : (
     <div>
       <SearchBar keyword={keyword} onChange={updateKeyword} />

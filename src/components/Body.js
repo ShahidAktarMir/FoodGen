@@ -11,6 +11,7 @@ const Body = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [keyword, setKeyword] = useState("");
+
   useEffect(() => {
     getRes();
   }, []);
@@ -37,11 +38,9 @@ const Body = () => {
     setFilterres(filtered);
   };
 
-  if (!allRes) return null;
+  if (!allRes) return <Shimmer />;
 
-  return allRes.length == 0 ? (
-    <Shimmer />
-  ) : (
+  return (
     <>
       <SearchBar keyword={keyword} onChange={updateKeyword} />
       <div className="grid grid-cols-6  justify-items-center justify-center ml-28 mr-28">

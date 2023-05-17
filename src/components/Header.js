@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+
+import userContext from "../utils/userContext";
 const Header = () => {
   const isOnline = useOnline();
+  const { user } = useContext(userContext);
   return (
     <div className="flex justify-between bg-pink-50 pl-10 pr-10">
       <div className="h-24 w-28 p-2 mt-1">
@@ -29,6 +33,10 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
+      </div>
+      <div>
+        <p>{user.name}</p>
+        <p>{user.email}</p>
       </div>
       <div className="py-8 w-24">
         {!isOnline ? (
