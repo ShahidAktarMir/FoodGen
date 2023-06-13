@@ -83,25 +83,39 @@ const ResDet = () => {
           ) : (
             filterMenu.map((menu) => {
               return (
-                <div className="grid grid-cols-6 gap-4 border-2 border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
-                    className="h-5 mt-14"
-                  />{" "}
-                  <p className="ml-2 mt-12">
-                    {menu?.card?.info?.itemAttribute?.vegClassifier}
-                  </p>
+                <div className="grid grid-cols-5 gap-4 border-2 border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
+                  {menu?.card?.info?.itemAttribute?.vegClassifier == "VEG" ? (
+                    <div className="flex flex-wrap mt-2">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
+                        className="h-5 mt-[45]"
+                      />
+                      <p className="ml-5 mt-10">
+                        {menu?.card?.info?.itemAttribute?.vegClassifier}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap mt-2">
+                      <img
+                        src="https://w7.pngwing.com/pngs/344/498/png-transparent-computer-icons-computer-software-light-non-veg-food-angle-rectangle-orange-thumbnail.png"
+                        className="h-6 mt-[42]"
+                      />
+                      <p className="ml-5  mt-10">
+                        {menu?.card?.info?.itemAttribute?.vegClassifier}
+                      </p>
+                    </div>
+                  )}
+
                   <p className="ml-2 mt-10">{menu?.card?.info?.name}</p>
                   <img
                     src={IMGID + menu?.card?.info?.imageId}
                     className="h-20 m-5 rounded"
                   />
-                  {/* {console.log(menu?.card?.info?.imageId)} */}
                   <p className="mt-10 ml-10">
                     ₹{menu?.card?.info?.price / 200}
                   </p>
                   <button
-                    className="bg-green-300 m-3 ml-10 p-1 h-8 mt-10 hover:bg-green-400 transition-all duration-100"
+                    className="bg-green-300 m-3 ml-10 p-1 h-8 mt-10  hover:bg-green-400 transition-all duration-100"
                     onClick={() => addCart(menu)}
                   >
                     Add to cart
