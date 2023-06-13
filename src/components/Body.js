@@ -27,16 +27,15 @@ const Body = () => {
     setKeyword(keyword);
     setFilterres(filtered);
   };
-  console.log(filterRes);
   if (!allRes) return <Shimmer />;
 
   return (
-    <>
+    <div className="bg-slate-300  p-5">
       <SearchBar keyword={keyword} onChange={updateKeyword} />
       {filterRes.length == 0 ? (
-        <h className="rounded-md p-5 bg-rose-300 m-10">
+        <h1 className="rounded-md p-5 bg-rose-300 m-10">
           No Restaurant Found - {keyword}
-        </h>
+        </h1>
       ) : (
         <div className="grid grid-cols-6  justify-items-center justify-center ml-28 mr-28">
           {filterRes.map((res) => {
@@ -48,7 +47,7 @@ const Body = () => {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default Body;

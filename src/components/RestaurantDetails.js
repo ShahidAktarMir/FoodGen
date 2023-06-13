@@ -76,36 +76,40 @@ const ResDet = () => {
         </div>
         <div className=" p-2 rounded-lg  w-3/4">
           <p className="text-center">Menus</p>
-          {!filterMenu
-            ? null
-            : filterMenu.map((menu) => {
-                return (
-                  <div className="grid grid-cols-6 gap-4 border-2 border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
-                      className="h-5 mt-14"
-                    />{" "}
-                    <p className="ml-2 mt-12">
-                      {menu?.card?.info?.itemAttribute?.vegClassifier}
-                    </p>
-                    <p className="ml-2 mt-10">{menu?.card?.info?.name}</p>
-                    <img
-                      src={IMGID + menu?.card?.info?.imageId}
-                      className="h-20 m-5 rounded"
-                    />
-                    {/* {console.log(menu?.card?.info?.imageId)} */}
-                    <p className="mt-10 ml-10">
-                      ₹{menu?.card?.info?.price / 200}
-                    </p>
-                    <button
-                      className="bg-green-300 m-3 ml-10 p-1 h-8 mt-10 hover:bg-green-400 transition-all duration-100"
-                      onClick={() => addCart(menu)}
-                    >
-                      Add to cart
-                    </button>
-                  </div>
-                );
-              })}
+          {!filterMenu ? null : filterMenu.length == 0 ? (
+            <h1 className="rounded-md p-5 bg-rose-300 m-10">
+              No Menus Found - {keyword}
+            </h1>
+          ) : (
+            filterMenu.map((menu) => {
+              return (
+                <div className="grid grid-cols-6 gap-4 border-2 border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
+                    className="h-5 mt-14"
+                  />{" "}
+                  <p className="ml-2 mt-12">
+                    {menu?.card?.info?.itemAttribute?.vegClassifier}
+                  </p>
+                  <p className="ml-2 mt-10">{menu?.card?.info?.name}</p>
+                  <img
+                    src={IMGID + menu?.card?.info?.imageId}
+                    className="h-20 m-5 rounded"
+                  />
+                  {/* {console.log(menu?.card?.info?.imageId)} */}
+                  <p className="mt-10 ml-10">
+                    ₹{menu?.card?.info?.price / 200}
+                  </p>
+                  <button
+                    className="bg-green-300 m-3 ml-10 p-1 h-8 mt-10 hover:bg-green-400 transition-all duration-100"
+                    onClick={() => addCart(menu)}
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              );
+            })
+          )}
         </div>
       </div>
     </div>
