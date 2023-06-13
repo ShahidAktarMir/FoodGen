@@ -27,21 +27,27 @@ const Body = () => {
     setKeyword(keyword);
     setFilterres(filtered);
   };
-
+  console.log(filterRes);
   if (!allRes) return <Shimmer />;
 
   return (
     <>
       <SearchBar keyword={keyword} onChange={updateKeyword} />
-      <div className="grid grid-cols-6  justify-items-center justify-center ml-28 mr-28">
-        {filterRes.map((res) => {
-          return (
-            <Link to={"/restaurant/" + res?.data?.id} key={res?.data?.id}>
-              <RestaurantCard {...res?.data} />
-            </Link>
-          );
-        })}
-      </div>
+      {filterRes.length == 0 ? (
+        <h className="rounded-md p-5 bg-rose-300 m-10">
+          No Restaurant Found - {keyword}
+        </h>
+      ) : (
+        <div className="grid grid-cols-6  justify-items-center justify-center ml-28 mr-28">
+          {filterRes.map((res) => {
+            return (
+              <Link to={"/restaurant/" + res?.data?.id} key={res?.data?.id}>
+                <RestaurantCard {...res?.data} />
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };

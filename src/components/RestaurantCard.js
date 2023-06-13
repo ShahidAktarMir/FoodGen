@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import userContext from "../utils/userContext";
 import { IMGID } from "./constant";
 
 const RestaurantCard = ({
@@ -10,7 +8,6 @@ const RestaurantCard = ({
   locality,
   avgRating,
 }) => {
-  const { user } = useContext(userContext);
   return (
     <div className="my-5 mx-5 p-3 h-auto w-60 bg-gray-100 rounded-xl hover:shadow transition-all duration-100 ">
       <img src={IMGID + cloudinaryImageId} className="rounded-t-lg mb-5" />

@@ -10,7 +10,10 @@ const Shimmer2 = () => {
             .fill(null)
             .map((i) => {
               return (
-                <div className="grid grid-cols-6 gap-4 border-2 animate-pulse border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
+                <div
+                  className="grid grid-cols-6 gap-4 border-2 animate-pulse border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg"
+                  key={i}
+                >
                   <img className="h-5 animate-pulse mt-14" />{" "}
                   <p className="ml-2 mt-12">{}</p>
                   <p className="ml-2 animate-pulse mt-10">{}</p>

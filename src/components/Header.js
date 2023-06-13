@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
   const cartItems = useSelector((store) => store.cart.item);
-  console.log(cartItems);
   return (
     <div className="flex justify-between bg-pink-50 pl-10 pr-10">
       <div className="h-24 w-28 p-2 mt-1">
