@@ -1,4 +1,3 @@
-import { useState, Provider } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Body from "./components/Body";
@@ -6,22 +5,21 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import CartDetails from "./components/CartDetails";
 import ResDet from "./components/RestaurantDetails";
-import userContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import Store from "./utils/Store";
 
 const AppComp = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-  });
   return (
-    <userContext.Provider value={{ user: user, setUser }}>
+    <Provider store={Store}>
       <Header />
       <Outlet />
       <Footer />
-    </userContext.Provider>
+    </Provider>
   );
 };
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +32,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <CartDetails />,
       },
       {
         path: "/contact",

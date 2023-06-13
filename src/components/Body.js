@@ -2,33 +2,23 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./ShimmerUI";
-import useOnline from "../utils/useOnline";
 import SearchBar from "./SearchBar";
 
 const Body = () => {
   const [allRes, setAllres] = useState();
   const [filterRes, setFilterres] = useState();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [keyword, setKeyword] = useState("");
-
   useEffect(() => {
     getRes();
   }, []);
 
   async function getRes() {
-    try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
-      );
-      const json = await data.json();
-      setAllres(json?.data?.cards[2]?.data?.data?.cards);
-      setFilterres(json?.data?.cards[2]?.data?.data?.cards);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.577486&lng=88.38098579999999&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setAllres(json?.data?.cards[2]?.data?.data?.cards);
+    setFilterres(json?.data?.cards[2]?.data?.data?.cards);
   }
   const updateKeyword = (keyword) => {
     const filtered = allRes.filter((res) =>

@@ -17,21 +17,8 @@ const RestaurantCard = ({
       <div>
         <h3 className="font-medium">{name}</h3>
         <h4>{locality}</h4>
-        <p>
-          {cuisines[0]}, {cuisines[1]}
-        </p>
+        <p>{cuisines[0]}</p>
         <p>{avgRating}⭐ ⭐ ⭐</p>
-        {costForTwo / 200 == NaN ? (
-          <p className=" text-green-500 mt-2 bg-gray-200 rounded-full p-2 text-center font-semibold">
-            ₹0
-          </p>
-        ) : (
-          <p className=" text-green-500 mt-2 bg-gray-200 rounded-full p-2 text-center font-semibold">
-            ₹{costForTwo / 200}
-          </p>
-        )}
-        <p>{user.name}</p>
-        <p>{user.email}</p>
       </div>
     </div>
   );

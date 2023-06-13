@@ -1,9 +1,6 @@
-import { useContext, useState } from "react";
-import userContext from "../utils/userContext";
+import { useState } from "react";
 
 const SearchBar = ({ keyword, onChange }) => {
-  const { user, setUser } = useContext(userContext);
-  console.log(userContext);
   return (
     <>
       <div className="flex justify-center mt-10 mb-10">
@@ -42,38 +39,6 @@ const SearchBar = ({ keyword, onChange }) => {
             />
           </div>
         </div>
-      </div>
-      <div className="flex flex-wrap justify-center">
-        <label for="name" className="ml-5">
-          Name :
-        </label>
-        <input
-          type="text"
-          value={user.name}
-          className="ml-5 bg-green-100 p-1"
-          id="name"
-          onChange={(e) => {
-            setUser({
-              name: e.target.value,
-              email: user.email,
-            });
-          }}
-        />
-        <label for="email" className="ml-5">
-          Email :
-        </label>
-        <input
-          type="email"
-          value={user.email}
-          id="email"
-          className="ml-5 bg-green-100 p-1"
-          onChange={(e) => {
-            setUser({
-              name: user.name,
-              email: e.target.value,
-            });
-          }}
-        />
       </div>
     </>
   );
