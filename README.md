@@ -1,10 +1,11 @@
-I. Introduction
+#I. Introduction
 Project Overview:
 Building a state-of-the-art food ordering application using React, Redux, React Router, Parcel Bundler, Tailwind CSS, and integrating it with the Swiggy Public API. This project showcases a strong focus on software quality and aims to provide users with an exceptional food ordering experience.
 
 Objectives:
 The primary objectives of this project are to deliver a high-quality food ordering application that exhibits excellence in terms of reliability, scalability, and performance. The application aims to provide users with a seamless and intuitive interface, efficient navigation, real-time information, and an overall delightful user experience while ordering food from various restaurants.
-II. Technology Stack
+
+#II. Technology Stack
 React:
 Leveraging the power of React, a widely adopted JavaScript library, to build a highly modular and reusable codebase. React promotes efficient component-based development, enhancing code maintainability, and enabling seamless integration of new features.
 
