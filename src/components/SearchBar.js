@@ -3,7 +3,7 @@ import { useState } from "react";
 const SearchBar = ({ keyword, onChange }) => {
   return (
     <>
-      <div className="flex justify-center mt-10 mb-10">
+      <div className="flex flex-wrap justify-center items-center mt-10 mb-10">
         <div>
           <label
             for="default-search"

@@ -31,6 +31,7 @@ const ResDet = () => {
       );
 
       const json = await data.json();
+      console.log(json);
       setMainRes(json?.data?.cards[0]?.card?.card?.info);
       setAllMenu(
         json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[1].card
@@ -59,18 +60,18 @@ const ResDet = () => {
   ) : (
     <div>
       <SearchBar keyword={keyword} onChange={updateKeyword} />
-      <div className="m-10 flex flex-wrap space-x-10">
-        <div className="bg-gray-100 p-5 border-2 border-x-red-500 border-y-green-100 hover:border-y-green-500 hover:border-x-red-100 rounded-2xl h-3/4 w-96 transition-all duration-500 ease-in-out">
+      <div className=" flex flex-wrap flex-col justify-center m-auto ">
+        <div className="bg-gray-100 p-2 h-[500px] w-[330px] m-auto border-2 border-x-red-500 border-y-green-100 hover:border-y-green-500 hover:border-x-red-100 rounded-2xl   transition-all duration-500 ease-in-out">
           <img
             src={IMGID + mainRes.cloudinaryImageId}
-            className="rounded-t-lg mb-10"
+            className="rounded-t-lg mb-10 h-[50%] m-auto object-contain"
           />
           <h1 className="font-semibold">{mainRes.name}</h1>
           <h3 className="">{mainRes.areaName}</h3>
           <h6>{mainRes.city}</h6>
           <h4>Rating: {mainRes.avgRating}</h4>
           <h4>Locality: {mainRes.locality}</h4>
-          <p className="text-green-500 cursor-pointer hover:bg-green-500 transition-all duration-500 ease-in-out hover:text-gray-100 mt-10 bg-gray-200 rounded-full p-5 text-center font-semibold">
+          <p className="text-green-500 cursor-pointer hover:bg-green-500 transition-all duration-500 ease-in-out hover:text-gray-100 mt-2 bg-gray-200 rounded-full p-5 text-center font-semibold">
             Directions ➤
           </p>
         </div>
@@ -83,7 +84,7 @@ const ResDet = () => {
           ) : (
             filterMenu.map((menu) => {
               return (
-                <div className="grid grid-cols-5 gap-4 border-2 border-x-orange-200 bg-slate-50 p-5 m-5 rounded-lg">
+                <div className="grid grid-cols-5  border-2 border-x-orange-200 bg-slate-50 p-5 rounded-lg h-[100px] m-auto">
                   {menu?.card?.info?.itemAttribute?.vegClassifier == "VEG" ? (
                     <div className="flex flex-wrap mt-2">
                       <img

@@ -9,12 +9,20 @@ const RestaurantCard = ({
   avgRating,
 }) => {
   return (
-    <div className="my-5 mx-5 p-3 h-auto w-60 bg-gray-200 rounded-xl hover:shadow-xl transition-all duration-100 ">
-      <img src={IMGID + cloudinaryImageId} className="rounded-t-lg mb-5" />
-      <div>
+    <div
+      className="mb-4 h-[300px]  w-[300px] m-auto sm:h-[280px] sm:w-[280px] md:h-[250px] md:w-[200px] 
+    xl:h-[300px] xl:w-[300px] 
+    rounded-xl hover:shadow-xl transition-all duration-300 p-1  hover:scale-105  group"
+    >
+      <img
+        src={IMGID + cloudinaryImageId}
+        className="rounded-2xl object-cover group-hover:rounded-sm  transition-all duration-800 "
+      />
+
+      <div className="pl-2 mt-5">
         <h3 className="font-medium">{name}</h3>
         <h4>{locality}</h4>
-        <p>{cuisines[0]}</p>
+        {/* <p>{cuisines[0]}</p> */}
         <p>{avgRating}⭐ ⭐ ⭐</p>
       </div>
     </div>
