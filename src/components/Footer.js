@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="h-full bg-slate-900 w-full grid grid-cols-3 justify-items-center">
+      <div className="h-full bg-slate-900 w-full grid grid-cols-3 justify-items-center ">
         <div className="p-10">
           <p className="text-white">Powered by</p>
           <img

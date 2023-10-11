@@ -58,66 +58,68 @@ const ResDet = () => {
   return !mainRes ? (
     <Shimmer2 />
   ) : (
-    <div>
-      <SearchBar keyword={keyword} onChange={updateKeyword} />
-      <div className=" flex flex-wrap flex-col justify-center m-auto ">
-        <div className="bg-gray-100 p-2 h-[500px] w-[330px] m-auto border-2 border-x-red-500 border-y-green-100 hover:border-y-green-500 hover:border-x-red-100 rounded-2xl   transition-all duration-500 ease-in-out">
-          <img
-            src={IMGID + mainRes.cloudinaryImageId}
-            className="rounded-t-lg mb-10 h-[50%] m-auto object-contain"
-          />
-          <h1 className="font-semibold">{mainRes.name}</h1>
-          <h3 className="">{mainRes.areaName}</h3>
-          <h6>{mainRes.city}</h6>
-          <h4>Rating: {mainRes.avgRating}</h4>
-          <h4>Locality: {mainRes.locality}</h4>
-          <p className="text-green-500 cursor-pointer hover:bg-green-500 transition-all duration-500 ease-in-out hover:text-gray-100 mt-2 bg-gray-200 rounded-full p-5 text-center font-semibold">
-            Directions ➤
-          </p>
+    <>
+      <div className="flex flex-wrap flex-col">
+        <div className="flex flex-wrap justify-between m-auto mt-5 items-center rounded-3xl p-10 bg-gradient-to-bl from-rose-300 via-rose-400 to-rose-600 text-white ">
+          <div className="m-5">
+            <h1 className="font-extrabold text-2xl">{mainRes.name}</h1>
+            <h3 className="font-mono">
+              {mainRes.locality},{mainRes.areaName}
+            </h3>
+            <h6 className="font-medium">{mainRes.city}</h6>
+            <h4>{mainRes.avgRating}</h4>
+          </div>
+          <div className="m-auto mb-5">
+            <img
+              src={IMGID + mainRes.cloudinaryImageId}
+              className="h-[217px] w-[344px] rounded-3xl"
+            />
+          </div>
         </div>
-        <div className=" p-2 rounded-lg  w-3/4">
-          <p className="text-center">Menus</p>
+        <div className="m-5">
+          <p className="border-b-2 border-orange-400 font-extrabold  text-2xl ">
+            Menus
+          </p>
+          <div>
+            <SearchBar keyword={keyword} onChange={updateKeyword} />
+          </div>
+
           {!filterMenu ? null : filterMenu.length == 0 ? (
-            <h1 className="rounded-md p-5 bg-rose-300 m-10">
-              No Menus Found - {keyword}
-            </h1>
+            <h1>No Menus Found - {keyword}</h1>
           ) : (
             filterMenu.map((menu) => {
               return (
-                <div className="grid grid-cols-5  border-2 border-x-orange-200 bg-slate-50 p-5 rounded-lg h-[100px] m-auto">
+                <div className="flex flex-wrap flex-row justify-between items-center mb-2  p-5 rounded-lg w-[80%] m-auto border-b-2 border-yellow-200">
                   {menu?.card?.info?.itemAttribute?.vegClassifier == "VEG" ? (
-                    <div className="flex flex-wrap mt-2">
-                      <img
-                        src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
-                        className="h-5 mt-[45]"
-                      />
-                      <p className="ml-5 mt-10">
-                        {menu?.card?.info?.itemAttribute?.vegClassifier}
-                      </p>
-                    </div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0050/5508/6656/products/2000px-Indian-vegetarian-mark.svg_aa6ffbb3-9caf-482d-a679-147a3af521b0.png?v=1663136192&width=1946"
+                      className="h-[20px] w-[20px]"
+                    />
                   ) : (
-                    <div className="flex flex-wrap mt-2">
-                      <img
-                        src="https://w7.pngwing.com/pngs/344/498/png-transparent-computer-icons-computer-software-light-non-veg-food-angle-rectangle-orange-thumbnail.png"
-                        className="h-6 mt-[42]"
-                      />
-                      <p className="ml-5  mt-10">
-                        {menu?.card?.info?.itemAttribute?.vegClassifier}
-                      </p>
-                    </div>
+                    <img
+                      src="https://w7.pngwing.com/pngs/344/498/png-transparent-computer-icons-computer-software-light-non-veg-food-angle-rectangle-orange-thumbnail.png"
+                      className="h-[25px] w-[25px]"
+                    />
                   )}
-
-                  <p className="ml-2 mt-10">{menu?.card?.info?.name}</p>
+                  <p className="w-[100px] h-[50px] text-center ">
+                    {menu?.card?.info?.itemAttribute?.vegClassifier}
+                  </p>
+                  <p className="w-[100px] h-[50px]  overflow-hidden text-center">
+                    {menu?.card?.info?.name}
+                  </p>
                   <img
                     src={IMGID + menu?.card?.info?.imageId}
-                    className="h-20 m-5 rounded"
+                    className="h-[50px] w-[100px] rounded-xl"
                   />
-                  <p className="mt-10 ml-10">
-                    ₹{menu?.card?.info?.price / 200}
+                  <p className="w-[100px] h-[50px] text-center">
+                    ₹
+                    {!menu?.card?.info?.price
+                      ? 0
+                      : menu?.card?.info?.price / 200}
                   </p>
                   <button
-                    className="bg-green-300 m-3 ml-10 p-1 h-8 mt-10  hover:bg-green-400 transition-all duration-100"
                     onClick={() => addCart(menu)}
+                    className="w-[100px] h-[40px] text-center bg-yellow-300 hover:bg-yellow-400 rounded-2xl"
                   >
                     Add to cart
                   </button>
@@ -127,7 +129,7 @@ const ResDet = () => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default ResDet;
